@@ -22,7 +22,7 @@ public final class JsonHelper {
         return objectMapper.writeValueAsString(obj);
     }
     
-    public <T extends Serializable> T parseToObject(String jsonString, Class<T> clazz) throws IOException {
+    public static <T extends Serializable> T parseToObject(String jsonString, Class<T> clazz) throws IOException {
         return objectMapper.readValue(jsonString, clazz);
     }
 }
