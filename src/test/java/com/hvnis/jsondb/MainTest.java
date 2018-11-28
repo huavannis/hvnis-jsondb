@@ -25,23 +25,24 @@ public class MainTest {
 
         Customer customer2 = new Customer();
         customer2.setId(UUID.randomUUID().toString());
-        customer2.setName("Test customer name 2");
+        customer2.setName("Hứa Văn Nís");
         customer2.setPhoneNumber("Test phone number 2");
         customerRepository.save(customer2);
 
         Customer customerUpdate = new Customer();
-        customerUpdate.setId(customer2.getId());
+        customerUpdate.setId(customer.getId());
         customerUpdate.setName("Test customer name updated");
         customerUpdate.setPhoneNumber("Test phone number updated");
         customerRepository.update(customerUpdate);
 
         final List<Customer> list = customerRepository.findAll();
         list.forEach(element -> {
-            try {
-                customerRepository.deleteById(element.getId());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            System.out.println(element.getName());
+//            try {
+//                customerRepository.deleteById(element.getId());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         });
         
 
